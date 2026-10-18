@@ -3,9 +3,7 @@ console.log("Welcome to a Rock Paper Scissors console game.");
 // Create playGame function around the playRound funciton.
 // Make it play 5 rounds.
 function playGame () {
-
     
-
     // Get computer choice
     function getComputerChoice() {
         // Use math.random to make random number between 0 and 1. 
@@ -87,21 +85,17 @@ function playGame () {
     console.log("Computer Score " + computerScore);
     }
 
-    // Create variables for selections made
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
-
     // Make variable for rounds played.
-    let roundsPlayed = 0;
-    
     // Call playround if the number of rounds played is less than 5
-    if (roundsPlayed < 5) {
+    for (let roundsPlayed = 1; roundsPlayed < 6; roundsPlayed++) {
+        // Create variables for selections made
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
         // Call playRound and pass in selections.    
         playRound (computerSelection, humanSelection);
-        roundsPlayed++;
         console.log("Rounds Played " + roundsPlayed);
         // If rounds is greater than 5 compute ending.
-    } else if(humanScore === computerScore) {
+    } if(humanScore === computerScore) {
         console.log("It's a tie game!");
     } else if(humanScore > computerScore) {
         console.log("You win the game! ");
@@ -110,9 +104,5 @@ function playGame () {
     }
     
 }
-
+// Starts the game.
 playGame();
-
-
-// Logic to play 5 rounds and then declare winner. 
-// Variable to track how many rounds have been played starting at 0    
